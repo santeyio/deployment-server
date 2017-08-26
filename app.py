@@ -17,5 +17,5 @@ def spotifyvisual():
     if request.method == "POST":
         # res = request.get_json()
         # if res.get('action') == 'push':
-        subprocess.call('./scripts/test.sh')
+        subprocess.call('./scripts/spotifyvisual.sh')
         return json.dumps({'status': 'success'})

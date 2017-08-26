@@ -15,4 +15,3 @@ chmod 755 /var/opt/spotifyvisual/spotifyvisual;
 find /var/opt/spotifyvisual/spotifyvisual/static -type d -exec chmod 755 {} \;
 find /var/opt/spotifyvisual/spotifyvisual/static -type f -exec chmod 644 {} \;
 ../bin/gunicorn -D --bind 127.0.0.1:5501 -p ../tmp/gunicorn.pid spotifyvisual.wsgi:application;
-
