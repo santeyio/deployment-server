@@ -10,12 +10,20 @@ def index():
 
 @app.route("/spotifyvisual", methods=["GET", "POST"])
 def spotifyvisual():
-
     if request.method == "GET":
         return "success";
-
     if request.method == "POST":
         # res = request.get_json()
         # if res.get('action') == 'push':
         subprocess.call('./scripts/spotifyvisual.sh')
+        return json.dumps({'status': 'success'})
+
+@app.route("/calebhayashida", methods=["GET", "POST"])
+def spotifyvisual():
+    if request.method == "GET":
+        return "success";
+    if request.method == "POST":
+        # res = request.get_json()
+        # if res.get('action') == 'push':
+        subprocess.call('./scripts/calebhayashida.sh')
         return json.dumps({'status': 'success'})
