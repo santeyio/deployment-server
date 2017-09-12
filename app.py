@@ -19,7 +19,7 @@ def spotifyvisual():
         return json.dumps({'status': 'success'})
 
 @app.route("/calebhayashida", methods=["GET", "POST"])
-def spotifyvisual():
+def calebhayashida():
     if request.method == "GET":
         return "success";
     if request.method == "POST":

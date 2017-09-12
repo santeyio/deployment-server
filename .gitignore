@@ -1,2 +1,3 @@
 *.pyc
 gunicorn.pid
+*.log
