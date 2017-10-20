@@ -29,7 +29,7 @@ def calebhayashida():
         return json.dumps({'status': 'success'})
 
 @app.route("/donation-tracking", methods=["GET", "POST"])
-def calebhayashida():
+def donationtracking():
     if request.method == "GET":
         return "success";
     if request.method == "POST":
