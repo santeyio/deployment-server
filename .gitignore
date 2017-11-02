@@ -1,3 +1,4 @@
 *.pyc
 gunicorn.pid
 *.log
+storage

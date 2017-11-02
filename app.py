@@ -37,3 +37,8 @@ def donationtracking():
         # if res.get('action') == 'push':
         subprocess.call('./scripts/donation-tracking.sh')
         return json.dumps({'status': 'success'})
+
+@app.route("/vim", methods=["GET", "POST"])
+def vim():
+    if request.method == "POST":
+
