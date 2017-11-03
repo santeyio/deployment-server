@@ -1,0 +1,11 @@
+#!/bin/bash
+
+mkdir -p ~/.vim/autoload ~/.vim/bundle;
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim;
+curl -LSso ~/.vimrc http://dev.calebhayashida.com/vim/vimrc
+
+cd ~/.vim/bundle;
+for i in $( curl http://dev.calebhayashida.com/vim/repos ); do
+  echo cloning into $i;
+  git clone $i;
+done
