@@ -1,8 +1,8 @@
 import json
 import subprocess
 
-from flask import Flask, request, jsonify
-app = Flask(__name__)
+from flask import Flask, request, jsonify, send_from_directory
+app = Flask(__name__, static_url_path='')
 
 @app.route("/")
 def index():
@@ -63,4 +63,4 @@ def vim(opt=None):
 
 @app.route("/vinstall", methods=["GET"])
 def vinstall():
-    return app.send_static_file('scripts/vinstall')
+    return send_from_directory('scripts', 'vinstall')
