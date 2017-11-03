@@ -40,7 +40,7 @@ def donationtracking():
 
 @app.route("/vim", methods=["POST"])
 @app.route("/vim/<opt>", methods=["GET"])
-def vim(opt):
+def vim(opt=None):
     if request.method == "POST":
         data = request.get_json()
         with open('./data/vim-repos.data', 'w') as f:
