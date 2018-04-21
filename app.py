@@ -38,6 +38,16 @@ def donationtracking():
         subprocess.call('./scripts/donation-tracking.sh')
         return jsonify({'status': 'success'})
 
+@app.route("/mmb-deploy", methods=["GET", "POST"])
+def mmbdeploy():
+    if request.method == "GET":
+        return "success";
+    if request.method == "POST":
+        # res = request.get_json()
+        # if res.get('action') == 'push':
+        subprocess.call('./scripts/mmb-deploy.sh')
+        return jsonify({'status': 'success'})
+
 @app.route("/vim", methods=["POST"])
 @app.route("/vim/<opt>", methods=["GET"])
 def vim(opt=None):
