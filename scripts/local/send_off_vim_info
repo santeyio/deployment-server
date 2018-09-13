@@ -1,0 +1,11 @@
+#!/usr/bin/python
+
+import requests
+
+with open('/tmp/vim-repos.tmp', 'r') as f:
+    repos = f.readlines()
+repos = [x.strip() for x in repos]
+with open('/home/santeyio/.vimrc', 'r') as f:
+    vimrc = f.read()
+
+requests.post('http://dev.calebhayashida.com/vim', json={'repos': repos, 'vimrc': vimrc})

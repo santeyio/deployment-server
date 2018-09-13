@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cd ~/.vim/bundle;
+
+echo > /tmp/vim-repos.tmp
+for i in $( ls ); do
+  if [ "$i" == "autoload" ]; then 
+    continue;
+  fi  
+  cat $i/.git/config | grep -E -o '(git|https)://github.com.*$' >> /tmp/vim-repos.tmp
+done
+
+send_off_vim_info && rm /tmp/vim-repos.tmp
